@@ -1,0 +1,44 @@
+import pygame
+pygame.init()
+#ekraani seaded
+screen=pygame.display.set_mode([640,480])
+pygame.display.set_caption("Ylesanne 2")
+
+
+bg = pygame.image.load("shop.jpg")
+screen.blit(bg,[0,0])
+gd = pygame.image.load("mees.png")
+vaikemees_gd = pygame.transform.scale(gd, (gd.get_width() // 3.6, gd.get_height() // 3.6))
+screen.blit(vaikemees_gd, [115, 165])
+jm = pygame.image.load("jutumull.png")
+vaikemull = pygame.transform.scale(jm, (jm.get_width() // 1.3, jm.get_height() // 1.3))
+screen.blit(vaikemull,[260,95])
+
+font = pygame.font.Font(None, 30)
+text = font.render("Tere, olen Marcus", True, [255,255,255])
+screen.blit(text, [280,160])
+
+Vikk = pygame.image.load("logo.png")
+vikkvaike = pygame.transform.scale(Vikk, (gd.get_width() // 3, gd.get_height() // 24))
+screen.blit(vikkvaike, [0,50])
+
+mook = pygame.image.load("Mook.png")
+mookvaike = pygame.transform.scale(mook, (gd.get_width() // 6, gd.get_height() // 6))
+screen.blit(mookvaike, [485,120])
+
+cake = pygame.image.load("kook.png")
+kookvaike = pygame.transform.scale(cake, (cake.get_width() // 8, cake.get_height() // 8))
+screen.blit(kookvaike, [450,240])
+
+
+
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.flip()
+
+pygame.quit()
